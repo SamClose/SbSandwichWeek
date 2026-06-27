@@ -135,7 +135,7 @@
 
   .search-wrap input {
     width: 100%;
-    padding: 0.5rem 0.75rem 0.5rem 2rem;
+    padding: 0.5rem 2rem 0.5rem 2rem;
     border: 1.5px solid var(--light);
     border-radius: 6px;
     font-family: 'DM Sans', sans-serif;
@@ -149,6 +149,26 @@
   .search-wrap input:focus {
     border-color: var(--mustard);
   }
+
+  .search-clear {
+    position: absolute;
+    right: 0.55rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--mid);
+    font-size: 0.75rem;
+    line-height: 1;
+    padding: 0.15rem 0.2rem;
+    border-radius: 3px;
+    display: none;
+    transition: color 0.15s;
+  }
+
+  .search-clear:hover { color: var(--rust); }
+  .search-clear.visible { display: block; }
 
   .search-wrap::before {
     content: '🔍';
@@ -562,6 +582,7 @@
 
     <div class="search-wrap">
       <input type="text" id="ing-search" placeholder="Search ingredients…" oninput="filterChips(this.value)" autocomplete="off">
+      <button class="search-clear" id="search-clear" onclick="clearSearch()" title="Clear search">✕</button>
     </div>
 
     <div id="no-results-msg" class="no-results-msg">No ingredients match your search.</div>
@@ -1226,6 +1247,33 @@ const NEGATIVE_FILTERS = [
       return !nutItems.some(n => allText.includes(n));
     }
   },
+  { key: "no-pork", label: "No pork",
+    test: s => {
+      const porkItems = ["pork","ham","bacon","salami","mortadella","capicola","prosciutto","pancetta","sausage","pastrami","pulled pork"];
+      const allText = [...s.protein, ...s.sauce].join(" ").toLowerCase();
+      return !porkItems.some(p => allText.includes(p));
+    }
+  },
+  { key: "no-beef", label: "No beef",
+    test: s => {
+      const beefItems = ["beef","tri-tip","meatball","pastrami","brisket","steak","burger"];
+      const allText = [...s.protein].join(" ").toLowerCase();
+      return !beefItems.some(b => allText.includes(b));
+    }
+  },
+  { key: "no-chicken", label: "No chicken",
+    test: s => {
+      const allText = [...s.protein].join(" ").toLowerCase();
+      return !allText.includes("chicken");
+    }
+  },
+  { key: "no-poultry", label: "No poultry",
+    test: s => {
+      const poultryItems = ["chicken", "turkey", "duck", "poultry"];
+      const allText = [...s.protein].join(" ").toLowerCase();
+      return !poultryItems.some(p => allText.includes(p));
+    }
+  },
 ];
 
 // ─── STATE ──────────────────────────────────────────────────────────────────
@@ -1315,6 +1363,7 @@ function clearAll() {
 // ─── SEARCH BAR ─────────────────────────────────────────────────────────────
 function filterChips(query) {
   const q = query.trim().toLowerCase();
+  document.getElementById('search-clear').classList.toggle('visible', query.length > 0);
   let anyVisible = false;
 
   document.querySelectorAll('.chip:not(.dietary-negative)').forEach(chip => {
@@ -1339,6 +1388,13 @@ function filterChips(query) {
 
   document.getElementById('no-results-msg').style.display =
     q && !anyVisible ? 'block' : 'none';
+}
+
+function clearSearch() {
+  const input = document.getElementById('ing-search');
+  input.value = '';
+  input.focus();
+  filterChips('');
 }
 
 // ─── ACTIVE SELECTION BAR ───────────────────────────────────────────────────
