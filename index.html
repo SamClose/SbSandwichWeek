@@ -21,539 +21,137 @@
     --green: #2D5016;
   }
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
-    color: var(--ink);
-    min-height: 100vh;
-  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); min-height: 100vh; }
 
-  header {
-    background: var(--ink);
-    padding: 2rem 1.5rem 1.5rem;
-    text-align: center;
-    border-bottom: 4px solid var(--mustard);
-  }
-
-  .eyebrow {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--mustard);
-    margin-bottom: 0.5rem;
-  }
-
-  header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 6vw, 3.5rem);
-    font-weight: 900;
-    color: var(--cream);
-    line-height: 1.05;
-    margin-bottom: 0.5rem;
-  }
-
+  header { background: var(--ink); padding: 2rem 1.5rem 1.5rem; text-align: center; border-bottom: 4px solid var(--mustard); }
+  .eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mustard); margin-bottom: 0.5rem; }
+  header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 900; color: var(--cream); line-height: 1.05; margin-bottom: 0.5rem; }
   header h1 span { color: var(--mustard); }
-
-  .tagline {
-    font-size: 0.85rem;
-    color: #A89878;
-    margin-top: 0.5rem;
-  }
-
-  .article-link {
-    font-size: 0.75rem;
-    color: #7A6850;
-    margin-top: 0.75rem;
-  }
-
-  .article-link a {
-    color: var(--mustard);
-    text-decoration: underline;
-    text-underline-offset: 2px;
-    opacity: 0.85;
-  }
-
+  .tagline { font-size: 0.85rem; color: #A89878; margin-top: 0.5rem; }
+  .article-link { font-size: 0.75rem; color: #7A6850; margin-top: 0.75rem; }
+  .article-link a { color: var(--mustard); text-decoration: underline; text-underline-offset: 2px; opacity: 0.85; }
   .article-link a:hover { opacity: 1; }
 
-  .layout {
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 0;
-    max-width: 1200px;
-    margin: 0 auto;
-    min-height: calc(100vh - 140px);
-  }
+  .layout { display: grid; grid-template-columns: 300px 1fr; gap: 0; max-width: 1200px; margin: 0 auto; min-height: calc(100vh - 140px); }
 
   /* ── SIDEBAR ── */
-  .sidebar {
-    background: var(--white);
-    border-right: 1px solid var(--light);
-    padding: 1.25rem 1.25rem 2rem;
-    position: sticky;
-    top: 0;
-    height: calc(100vh - 140px);
-    overflow-y: auto;
-  }
-
-  .sidebar-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 0.75rem;
-  }
-
-  .sidebar-top h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    color: var(--ink);
-  }
-
-  .clear-btn {
-    padding: 0.3rem 0.75rem;
-    background: none;
-    border: 1.5px solid var(--light);
-    border-radius: 6px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.72rem;
-    color: var(--mid);
-    cursor: pointer;
-    transition: all 0.15s;
-    white-space: nowrap;
-  }
-
-  .clear-btn:hover {
-    border-color: var(--rust);
-    color: var(--rust);
-  }
+  .sidebar { background: var(--white); border-right: 1px solid var(--light); padding: 1.25rem 1.25rem 2rem; position: sticky; top: 0; height: calc(100vh - 140px); overflow-y: auto; }
+  .sidebar-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
+  .sidebar-top h2 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--ink); }
+  .clear-btn { padding: 0.3rem 0.75rem; background: none; border: 1.5px solid var(--light); border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 0.72rem; color: var(--mid); cursor: pointer; transition: all 0.15s; white-space: nowrap; }
+  .clear-btn:hover { border-color: var(--rust); color: var(--rust); }
 
   /* Search bar */
-  .search-wrap {
-    position: relative;
-    margin-bottom: 1rem;
-  }
-
-  .search-wrap input {
-    width: 100%;
-    padding: 0.5rem 2rem 0.5rem 2rem;
-    border: 1.5px solid var(--light);
-    border-radius: 6px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.8rem;
-    background: var(--cream);
-    color: var(--ink);
-    outline: none;
-    transition: border-color 0.15s;
-  }
-
-  .search-wrap input:focus {
-    border-color: var(--mustard);
-  }
-
-  .search-clear {
-    position: absolute;
-    right: 0.55rem;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--mid);
-    font-size: 0.75rem;
-    line-height: 1;
-    padding: 0.15rem 0.2rem;
-    border-radius: 3px;
-    display: none;
-    transition: color 0.15s;
-  }
-
+  .search-wrap { position: relative; margin-bottom: 1rem; }
+  .search-wrap input { width: 100%; padding: 0.5rem 2rem 0.5rem 2rem; border: 1.5px solid var(--light); border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 0.8rem; background: var(--cream); color: var(--ink); outline: none; transition: border-color 0.15s; }
+  .search-wrap input:focus { border-color: var(--mustard); }
+  .search-clear { position: absolute; right: 0.55rem; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: var(--mid); font-size: 0.75rem; line-height: 1; padding: 0.15rem 0.2rem; border-radius: 3px; display: none; transition: color 0.15s; }
   .search-clear:hover { color: var(--rust); }
   .search-clear.visible { display: block; }
-
-  .search-wrap::before {
-    content: '🔍';
-    position: absolute;
-    left: 0.55rem;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 0.7rem;
-    pointer-events: none;
-  }
+  .search-wrap::before { content: '🔍'; position: absolute; left: 0.55rem; top: 50%; transform: translateY(-50%); font-size: 0.7rem; pointer-events: none; }
 
   /* Category sections */
-  .category-section {
-    margin-bottom: 0.25rem;
-  }
-
-  .category-label {
-    font-size: 0.62rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--mid);
-    margin: 1rem 0 0;
-    padding-bottom: 0.25rem;
-    border-bottom: 1px solid var(--light);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    user-select: none;
-  }
-
+  .category-section { margin-bottom: 0.25rem; }
+  .category-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mid); margin: 1rem 0 0; padding-bottom: 0.25rem; border-bottom: 1px solid var(--light); cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none; }
   .category-label:hover { color: var(--ink); }
-
-  .cat-arrow {
-    font-size: 0.6rem;
-    transition: transform 0.2s ease;
-    opacity: 0.6;
-  }
-
+  .cat-arrow { font-size: 0.6rem; transition: transform 0.2s ease; opacity: 0.6; }
   .category-section.collapsed .cat-arrow { transform: rotate(-90deg); }
+  .chip-list { display: flex; flex-direction: column; gap: 0.3rem; margin-top: 0.4rem; overflow: hidden; transition: max-height 0.25s ease, opacity 0.2s ease; max-height: 2000px; opacity: 1; }
+  .category-section.collapsed .chip-list { max-height: 0; opacity: 0; margin-top: 0; }
 
-  .chip-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    margin-top: 0.4rem;
-    overflow: hidden;
-    transition: max-height 0.25s ease, opacity 0.2s ease;
-    max-height: 2000px;
-    opacity: 1;
-  }
-
-  .category-section.collapsed .chip-list {
-    max-height: 0;
-    opacity: 0;
-    margin-top: 0;
-  }
-
-  .chip {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.35rem 0.65rem;
-    border: 1.5px solid var(--light);
-    border-radius: 6px;
-    font-size: 0.78rem;
-    font-weight: 500;
-    color: var(--mid);
-    background: var(--cream);
-    cursor: pointer;
-    transition: all 0.12s ease;
-    user-select: none;
-  }
-
-  .chip:hover {
-    border-color: var(--mustard);
-    color: var(--ink);
-    background: #FFF8E6;
-  }
-
-  .chip.active {
-    background: var(--mustard);
-    border-color: var(--mustard);
-    color: var(--ink);
-    font-weight: 600;
-  }
-
+  .chip { display: flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.65rem; border: 1.5px solid var(--light); border-radius: 6px; font-size: 0.78rem; font-weight: 500; color: var(--mid); background: var(--cream); cursor: pointer; transition: all 0.12s ease; user-select: none; }
+  .chip:hover { border-color: var(--mustard); color: var(--ink); background: #FFF8E6; }
+  .chip.active { background: var(--mustard); border-color: var(--mustard); color: var(--ink); font-weight: 600; }
   .chip.hidden-by-search { display: none; }
-
-  .chip .checkmark {
-    width: 14px;
-    height: 14px;
-    border: 1.5px solid currentColor;
-    border-radius: 3px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    font-size: 0.6rem;
-    opacity: 0.5;
-  }
-
-  .chip.active .checkmark {
-    background: var(--ink);
-    border-color: var(--ink);
-    color: var(--mustard);
-    opacity: 1;
-  }
-
+  .chip .checkmark { width: 14px; height: 14px; border: 1.5px solid currentColor; border-radius: 3px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.6rem; opacity: 0.5; }
+  .chip.active .checkmark { background: var(--ink); border-color: var(--ink); color: var(--mustard); opacity: 1; }
   .chip.active .checkmark::after { content: '✓'; }
-
-  .chip.dietary-negative {
-    border-style: dashed;
-  }
-
-  .chip.dietary-negative.active {
-    background: #2D5016;
-    border-color: #2D5016;
-    color: #fff;
-  }
-
-  .chip.dietary-negative.active .checkmark {
-    background: #fff;
-    border-color: #fff;
-    color: #2D5016;
-  }
-
-  .no-results-msg {
-    font-size: 0.75rem;
-    color: var(--mid);
-    font-style: italic;
-    padding: 0.5rem 0;
-    display: none;
-  }
+  .chip.dietary-negative { border-style: dashed; }
+  .chip.dietary-negative.active { background: #2D5016; border-color: #2D5016; color: #fff; }
+  .chip.dietary-negative.active .checkmark { background: #fff; border-color: #fff; color: #2D5016; }
+  .no-results-msg { font-size: 0.75rem; color: var(--mid); font-style: italic; padding: 0.5rem 0; display: none; }
 
   /* ── RESULTS PANEL ── */
-  .results {
-    padding: 1.5rem 2rem;
-  }
-
-  /* Active selections row */
-  .active-selections {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-bottom: 1rem;
-    min-height: 0;
-  }
-
+  .results { padding: 1.5rem 2rem; }
+  .active-selections { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; min-height: 0; }
   .active-selections:empty { display: none; }
-
-  .sel-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    padding: 0.25rem 0.6rem;
-    border-radius: 2rem;
-    font-size: 0.72rem;
-    font-weight: 600;
-    background: var(--mustard);
-    color: var(--ink);
-    cursor: pointer;
-  }
-
-  .sel-chip.negative {
-    background: #2D5016;
-    color: #fff;
-  }
-
-  .sel-chip .remove {
-    font-size: 0.65rem;
-    opacity: 0.7;
-    margin-left: 0.1rem;
-  }
-
+  .sel-chip { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.25rem 0.6rem; border-radius: 2rem; font-size: 0.72rem; font-weight: 600; background: var(--mustard); color: var(--ink); cursor: pointer; }
+  .sel-chip.negative { background: #2D5016; color: #fff; }
+  .sel-chip .remove { font-size: 0.65rem; opacity: 0.7; margin-left: 0.1rem; }
   .sel-chip:hover .remove { opacity: 1; }
-
-  .results-header {
-    display: flex;
-    align-items: baseline;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 2px solid var(--light);
-  }
-
-  .results-header h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    color: var(--ink);
-  }
-
-  .count-badge {
-    font-size: 0.75rem;
-    background: var(--mustard);
-    color: var(--ink);
-    font-weight: 700;
-    padding: 0.15rem 0.55rem;
-    border-radius: 1rem;
-  }
-
-  .match-note {
-    font-size: 0.78rem;
-    color: var(--mid);
-    margin-left: auto;
-  }
+  .results-header { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--light); }
+  .results-header h2 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--ink); }
+  .count-badge { font-size: 0.75rem; background: var(--mustard); color: var(--ink); font-weight: 700; padding: 0.15rem 0.55rem; border-radius: 1rem; }
+  .match-note { font-size: 0.78rem; color: var(--mid); margin-left: auto; }
 
   /* ── CARDS ── */
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1rem;
-  }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+
+  .card-link { text-decoration: none; color: inherit; display: block; }
 
   .card {
     background: var(--white);
     border: 1px solid var(--light);
     border-radius: 8px;
-    padding: 1.1rem 1.2rem;
+    overflow: hidden;
     transition: box-shadow 0.15s, border-color 0.15s;
     position: relative;
+    height: 100%;
   }
-
-  .card:hover {
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    border-color: var(--mustard);
-  }
-
+  .card-link:hover .card { box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-color: var(--mustard); }
   .card.hidden { display: none; }
+  .card-link.hidden { display: none; }
 
-  .card-restaurant {
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--rust);
-    margin-bottom: 0.3rem;
-  }
-
-  .card-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--ink);
-    margin-bottom: 0.5rem;
-    line-height: 1.25;
-  }
-
-  .card-ingredients {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.3rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .ing-tag {
-    font-size: 0.68rem;
-    padding: 0.15rem 0.5rem;
-    border-radius: 3px;
+  .card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
     background: var(--paper);
-    color: var(--mid);
   }
 
-  .ing-tag.matched {
-    background: #FFF3C4;
-    color: #7A5800;
-    font-weight: 600;
-  }
+  .card-body { padding: 1rem 1.1rem 1rem; }
 
-  .card-address {
-    font-size: 0.72rem;
-    color: var(--mid);
-    display: flex;
-    align-items: flex-start;
+  .card-restaurant { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rust); margin-bottom: 0.3rem; }
+  .card-name { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; line-height: 1.25; }
+  .card-ingredients { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.75rem; }
+  .ing-tag { font-size: 0.68rem; padding: 0.15rem 0.5rem; border-radius: 3px; background: var(--paper); color: var(--mid); }
+  .ing-tag.matched { background: #FFF3C4; color: #7A5800; font-weight: 600; }
+  .card-address { font-size: 0.72rem; color: var(--mid); display: flex; align-items: flex-start; gap: 0.3rem; }
+  .card-address::before { content: '📍'; font-size: 0.65rem; margin-top: 0.05rem; flex-shrink: 0; }
+  .card-notes { font-size: 0.7rem; color: var(--rust); margin-top: 0.4rem; font-style: italic; }
+
+  .read-more {
+    display: inline-flex;
+    align-items: center;
     gap: 0.3rem;
-  }
-
-  .card-address::before {
-    content: '📍';
-    font-size: 0.65rem;
-    margin-top: 0.05rem;
-    flex-shrink: 0;
-  }
-
-  .card-notes {
+    margin-top: 0.65rem;
     font-size: 0.7rem;
+    font-weight: 600;
     color: var(--rust);
-    margin-top: 0.4rem;
-    font-style: italic;
+    letter-spacing: 0.04em;
+    opacity: 0.8;
   }
+  .card-link:hover .read-more { opacity: 1; text-decoration: underline; }
 
-  .match-score {
-    position: absolute;
-    top: 0.8rem;
-    right: 0.9rem;
-    font-size: 0.65rem;
-    font-weight: 700;
-    color: var(--green);
-    background: #E8F5D8;
-    padding: 0.15rem 0.45rem;
-    border-radius: 3px;
-    display: none;
-  }
-
+  .match-score { position: absolute; top: 0.6rem; right: 0.7rem; font-size: 0.65rem; font-weight: 700; color: var(--green); background: #E8F5D8; padding: 0.15rem 0.45rem; border-radius: 3px; display: none; z-index: 1; }
   .match-score.visible { display: block; }
-
-  .empty-state {
-    grid-column: 1/-1;
-    text-align: center;
-    padding: 4rem 2rem;
-    color: var(--mid);
-  }
-
-  .empty-state .emoji { font-size: 3rem; margin-bottom: 1rem; }
 
   /* ── MOBILE FILTER TOGGLE ── */
   .filter-toggle-btn { display: none; }
 
   @media (max-width: 720px) {
     .layout { grid-template-columns: 1fr; position: relative; }
-
-    .sidebar {
-      position: static;
-      height: auto;
-      max-height: 0;
-      overflow: hidden;
-      border-right: none;
-      border-bottom: none;
-      padding: 0 1.25rem;
-      transition: max-height 0.35s ease, padding 0.3s ease;
-    }
-
-    .sidebar.mobile-open {
-      max-height: 9999px;
-      padding: 1.25rem 1.25rem 1.5rem;
-      border-bottom: 2px solid var(--mustard);
-    }
-
+    .sidebar { position: static; height: auto; max-height: 0; overflow: hidden; border-right: none; border-bottom: none; padding: 0 1.25rem; transition: max-height 0.35s ease, padding 0.3s ease; }
+    .sidebar.mobile-open { max-height: 9999px; padding: 1.25rem 1.25rem 1.5rem; border-bottom: 2px solid var(--mustard); }
     .results { padding: 1rem; }
-
-    .filter-toggle-btn {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      padding: 0.75rem 1.25rem;
-      background: var(--ink);
-      color: var(--cream);
-      border: none;
-      border-bottom: 2px solid var(--mustard);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 600;
-      cursor: pointer;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .filter-toggle-btn .toggle-left {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .filter-toggle-btn .toggle-count {
-      background: var(--mustard);
-      color: var(--ink);
-      font-size: 0.7rem;
-      font-weight: 700;
-      padding: 0.1rem 0.45rem;
-      border-radius: 1rem;
-      display: none;
-    }
-
+    .filter-toggle-btn { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 0.75rem 1.25rem; background: var(--ink); color: var(--cream); border: none; border-bottom: 2px solid var(--mustard); font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 600; cursor: pointer; position: sticky; top: 0; z-index: 100; }
+    .filter-toggle-btn .toggle-left { display: flex; align-items: center; gap: 0.5rem; }
+    .filter-toggle-btn .toggle-count { background: var(--mustard); color: var(--ink); font-size: 0.7rem; font-weight: 700; padding: 0.1rem 0.45rem; border-radius: 1rem; display: none; }
     .filter-toggle-btn .toggle-count.has-filters { display: inline-block; }
-
-    .filter-toggle-btn .toggle-arrow {
-      font-size: 0.7rem;
-      transition: transform 0.25s ease;
-      opacity: 0.7;
-    }
-
+    .filter-toggle-btn .toggle-arrow { font-size: 0.7rem; transition: transform 0.25s ease; opacity: 0.7; }
     .filter-toggle-btn.open .toggle-arrow { transform: rotate(180deg); }
+    .card-img { height: 200px; }
   }
 </style>
 </head>
@@ -568,10 +166,7 @@
 
 <div class="layout">
   <button class="filter-toggle-btn" id="filter-toggle-btn" onclick="toggleMobileSidebar()">
-    <span class="toggle-left">
-      🥪 Filter Ingredients
-      <span class="toggle-count" id="mobile-filter-count"></span>
-    </span>
+    <span class="toggle-left">🥪 Filter Ingredients <span class="toggle-count" id="mobile-filter-count"></span></span>
     <span class="toggle-arrow">▾</span>
   </button>
   <aside class="sidebar" id="sidebar">
@@ -579,14 +174,11 @@
       <h2>Ingredients</h2>
       <button class="clear-btn" onclick="clearAll()">✕ Clear all</button>
     </div>
-
     <div class="search-wrap">
       <input type="text" id="ing-search" placeholder="Search ingredients…" oninput="filterChips(this.value)" autocomplete="off">
       <button class="search-clear" id="search-clear" onclick="clearSearch()" title="Clear search">✕</button>
     </div>
-
     <div id="no-results-msg" class="no-results-msg">No ingredients match your search.</div>
-
     <div id="cat-bread-section" class="category-section">
       <div class="category-label" onclick="toggleCat('cat-bread-section')">Bread <span class="cat-arrow">▾</span></div>
       <div class="chip-list" id="cat-bread"></div>
@@ -625,700 +217,348 @@
 </div>
 
 <script>
-// ─── DATA ───────────────────────────────────────────────────────────────────
+const BASE = "https://www.independent.com/2026/06/24/santa-barbaras-sandwich-week-returns/";
+const IMG  = "https://www.independent.com/wp-content/uploads/2026/06/";
 
 const SANDWICHES = [
   {
-    restaurant: "Bistro Amasa",
-    name: "Fried Chicken Sandwich",
-    address: "1404 De la Vina St.",
-    protein: ["fried chicken"],
-    cheese: [],
-    veg: ["kale", "apple", "pickles"],
-    sauce: ["dijonnaise"],
-    bread: ["brioche"],
-    dietary: [],
-    meat: true,
+    restaurant: "Bistro Amasa", name: "Fried Chicken Sandwich", address: "1404 De la Vina St.",
+    protein: ["fried chicken"], cheese: [], veg: ["kale", "apple", "pickles"], sauce: ["dijonnaise"], bread: ["brioche"], dietary: [], meat: true,
     notes: "Mon–Tue 5–9pm · Wed–Fri 4–9pm · Sat–Sun 9:30am–2pm & 4–9pm",
+    anchor: "#bistro", image: IMG + "Bistro-Amasa-by-Ryan-Cruz.jpg",
   },
   {
-    restaurant: "Blue Owl",
-    name: "Bánh Mì Sandwich",
-    address: "5 W. Canon Perdido St.",
-    protein: ["pork", "chicken", "beef", "tofu", "eggplant"],
-    cheese: [],
-    veg: ["daikon", "carrots", "cabbage", "cilantro", "green onions"],
-    sauce: ["oyster chili mayo", "chili sauce"],
-    bread: ["baguette"],
-    dietary: ["vegan option", "gluten-free option"],
-    meat: true,
+    restaurant: "Blue Owl", name: "Bánh Mì Sandwich", address: "5 W. Canon Perdido St.",
+    protein: ["pork", "chicken", "beef", "tofu", "eggplant"], cheese: [], veg: ["daikon", "carrots", "cabbage", "cilantro", "green onions"], sauce: ["oyster chili mayo", "chili sauce"], bread: ["baguette"], dietary: ["vegan option", "gluten-free option"], meat: true,
     notes: "Tue–Thu & Sun 11am–9pm · Fri–Sat 11am–1am · Mon closed",
+    anchor: "#blue", image: IMG + "Blue-Owl-Bahn-Mi-2-by-Diego-Melgoza.jpg",
   },
   {
-    restaurant: "CAYA at the Leta Hotel",
-    name: "Lazy Pig",
-    address: "5650 Calle Real, Goleta",
-    protein: ["pulled pork"],
-    cheese: [],
-    veg: ["coleslaw", "pickled onions", "apple"],
-    sauce: ["BBQ sauce", "mustard"],
-    bread: ["brioche"],
-    dietary: [],
-    meat: true,
+    restaurant: "CAYA at the Leta Hotel", name: "Lazy Pig", address: "5650 Calle Real, Goleta",
+    protein: ["pulled pork"], cheese: [], veg: ["coleslaw", "pickled onions", "apple"], sauce: ["BBQ sauce", "mustard"], bread: ["brioche"], dietary: [], meat: true,
     notes: "Dine-in only · Mon–Fri 7am–9pm · Sat–Sun 8am–9pm",
+    anchor: "#caya", image: IMG + "Caya-by-Natalie-MacFarlane.png",
   },
   {
-    restaurant: "Corner Tap",
-    name: "Pulled Pork Sandwich",
-    address: "1905 Cliff Dr., Ste. F",
-    protein: ["pulled pork"],
-    cheese: [],
-    veg: ["coleslaw", "fried onion strings"],
-    sauce: ["chipotle BBQ sauce", "ranch"],
-    bread: ["ciabatta"],
-    dietary: [],
-    meat: true,
+    restaurant: "Corner Tap", name: "Pulled Pork Sandwich", address: "1905 Cliff Dr., Ste. F",
+    protein: ["pulled pork"], cheese: [], veg: ["coleslaw", "fried onion strings"], sauce: ["chipotle BBQ sauce", "ranch"], bread: ["ciabatta"], dietary: [], meat: true,
     notes: "Sun–Thu 11:30am–9pm · Fri–Sat 11:30am–10pm",
+    anchor: "#corner", image: IMG + "Corner-Tap-2-by-Elaine-Sanders.jpeg",
   },
   {
-    restaurant: "Cristino's Bakery",
-    name: "Tri-Tip Sandwich",
-    address: "170 Aero Camino, Goleta",
-    protein: ["tri-tip beef"],
-    cheese: ["pepper Jack"],
-    veg: ["roasted tomatoes", "red onions", "roasted red peppers"],
-    sauce: ["Dijon mustard aioli"],
-    bread: ["ciabatta"],
-    dietary: [],
-    meat: true,
+    restaurant: "Cristino's Bakery", name: "Tri-Tip Sandwich", address: "170 Aero Camino, Goleta",
+    protein: ["tri-tip beef"], cheese: ["pepper Jack"], veg: ["roasted tomatoes", "red onions", "roasted red peppers"], sauce: ["Dijon mustard aioli"], bread: ["ciabatta"], dietary: [], meat: true,
     notes: "Takeout only · Mon–Fri 6am–8pm · Sat–Sun 6am–2pm",
+    anchor: "#cristino", image: IMG + "Cristinos-1-by-George-Yatchisin-1.jpg",
   },
   {
-    restaurant: "Crushcakes & Café",
-    name: "Fried Egg I'm in Love",
-    address: "1315 Anacapa St. / 5392 Hollister Ave.",
-    protein: ["eggs", "chicken-apple-sage sausage"],
-    cheese: ["parmesan"],
-    veg: ["roasted red onions"],
-    sauce: ["pesto", "aioli"],
-    bread: ["sourdough"],
-    dietary: [],
-    meat: true,
+    restaurant: "Crushcakes & Café", name: "Fried Egg I'm in Love", address: "1315 Anacapa St. / 5392 Hollister Ave.",
+    protein: ["eggs", "chicken-apple-sage sausage"], cheese: ["parmesan"], veg: ["roasted red onions"], sauce: ["pesto", "aioli"], bread: ["sourdough"], dietary: [], meat: true,
     notes: "Daily 7:30am–4pm",
+    anchor: "#crushcakes", image: IMG + "Crushcake-by-Callie-Fausey-rotated.jpeg",
   },
   {
-    restaurant: "Dave's Dogs",
-    name: "Chipotle Chicken Sandwich",
-    address: "149 S. Turnpike Rd.",
-    protein: ["fried chicken", "bacon"],
-    cheese: ["Jack"],
-    veg: ["jalapeños"],
-    sauce: ["chipotle aioli"],
-    bread: ["sourdough"],
-    dietary: [],
-    meat: true,
+    restaurant: "Dave's Dogs", name: "Chipotle Chicken Sandwich", address: "149 S. Turnpike Rd.",
+    protein: ["fried chicken", "bacon"], cheese: ["Jack"], veg: ["jalapeños"], sauce: ["chipotle aioli"], bread: ["sourdough"], dietary: [], meat: true,
     notes: "Mon–Sat 11am–11pm · Sun closed",
+    anchor: "#dave", image: IMG + "Daves-Dogs-2-by-Terry-Ortega.jpeg",
   },
   {
-    restaurant: "Dutch Garden",
-    name: "Reuben Sandwich",
-    address: "4203 State St.",
-    protein: ["pastrami"],
-    cheese: ["Swiss"],
-    veg: ["sauerkraut"],
-    sauce: ["Russian dressing"],
-    bread: ["rye"],
-    dietary: [],
-    meat: true,
+    restaurant: "Dutch Garden", name: "Reuben Sandwich", address: "4203 State St.",
+    protein: ["pastrami"], cheese: ["Swiss"], veg: ["sauerkraut"], sauce: ["Russian dressing"], bread: ["rye"], dietary: [], meat: true,
     notes: "Wed & Sun 11am–4pm · Thu–Sat 11am–8:30pm · Mon–Tue closed",
+    anchor: "#dutch", image: IMG + "Dutch-Garden-by-Nick-Welsh.jpeg",
   },
   {
-    restaurant: "Etty's Jewish Deli & Bakery",
-    name: "Hochman Hottie Pastrami",
-    address: "524 Chapala St.",
-    protein: ["pastrami"],
-    cheese: [],
-    veg: ["sauerkraut"],
-    sauce: ["Russian dressing"],
-    bread: ["rye"],
-    dietary: [],
-    meat: true,
-    notes: "Dine-in only · Tue–Thu 10am–3pm · Fri 10am–2:30pm · Mon/Sat/Sun closed · Membership required",
+    restaurant: "Etty's Jewish Deli & Bakery", name: "Hochman Hottie Pastrami", address: "524 Chapala St.",
+    protein: ["pastrami"], cheese: [], veg: ["sauerkraut"], sauce: ["Russian dressing"], bread: ["rye"], dietary: [], meat: true,
+    notes: "Dine-in only · Tue–Thu 10am–3pm · Fri 10am–2:30pm · Mon/Sat/Sun closed",
+    anchor: "#etty", image: IMG + "Ettys-by-George-Yatchisin-1.jpg",
   },
   {
-    restaurant: "Fresco at the Market",
-    name: "The Grinder",
-    address: "38 W. Victoria St.",
-    protein: ["salami", "ham", "mortadella"],
-    cheese: ["provolone"],
-    veg: ["green olives", "pepperoncini", "roasted red pepper", "tomatoes", "red onion"],
-    sauce: ["Italian dressing"],
-    bread: ["Bolillo roll"],
-    dietary: [],
-    meat: true,
+    restaurant: "Fresco at the Market", name: "The Grinder", address: "38 W. Victoria St.",
+    protein: ["salami", "ham", "mortadella"], cheese: ["provolone"], veg: ["green olives", "pepperoncini", "roasted red pepper", "tomatoes", "red onion"], sauce: ["Italian dressing"], bread: ["Bolillo roll"], dietary: [], meat: true,
     notes: "Dine-in only · Daily 11:30am–7:30pm",
+    anchor: "#fresco", image: IMG + "Fresco-7-by-Leslie-Dinaberg-1.jpg",
   },
   {
-    restaurant: "Gino's Sicilian Express",
-    name: "Meatball Panini",
-    address: "12 W. Figueroa St.",
-    protein: ["beef meatballs"],
-    cheese: ["mozzarella"],
-    veg: [],
-    sauce: ["marinara"],
-    bread: ["panini dough"],
-    dietary: [],
-    meat: true,
+    restaurant: "Gino's Sicilian Express", name: "Meatball Panini", address: "12 W. Figueroa St.",
+    protein: ["beef meatballs"], cheese: ["mozzarella"], veg: [], sauce: ["marinara"], bread: ["panini dough"], dietary: [], meat: true,
     notes: "Mon–Sat 11:30am–9pm · Sun 1–8pm",
+    anchor: "#gino", image: IMG + "Ginos-5-by-Marianne-Partridge.jpeg",
   },
   {
-    restaurant: "Goodland Waffles & Melts",
-    name: "The Wake & Bacon",
-    address: "1131 State St.",
-    protein: ["eggs", "bacon"],
-    cheese: ["cheddar Jack"],
-    veg: ["scallions"],
-    sauce: ["peach chipotle cream cheese"],
-    bread: ["Texas toast"],
-    dietary: [],
-    meat: true,
+    restaurant: "Goodland Waffles & Melts", name: "The Wake & Bacon", address: "1131 State St.",
+    protein: ["eggs", "bacon"], cheese: ["cheddar Jack"], veg: ["scallions"], sauce: ["peach chipotle cream cheese"], bread: ["Texas toast"], dietary: [], meat: true,
     notes: "Daily 7am–6pm",
+    anchor: "#goodland", image: IMG + "Goodland-by-Erin-Lynch-rotated.jpg",
   },
   {
-    restaurant: "Haas's Fine Ice Cream",
-    name: "Ice Cream Sandwich",
-    address: "3987 State St., Ste. B",
-    protein: [],
-    cheese: [],
-    veg: [],
-    sauce: ["ice cream"],
-    bread: ["chocolate chip cookies"],
-    dietary: ["vegetarian"],
-    meat: false,
+    restaurant: "Haas's Fine Ice Cream", name: "Ice Cream Sandwich", address: "3987 State St., Ste. B",
+    protein: [], cheese: [], veg: [], sauce: ["ice cream"], bread: ["chocolate chip cookies"], dietary: ["vegetarian"], meat: false,
     notes: "Sun–Thu 12pm–11pm · Fri–Sat 12pm–12am",
+    anchor: "#haas", image: IMG + "Haass-Ice-Cream-Sando-by-Courtesy-1.jpeg",
   },
   {
-    restaurant: "Hook & Press",
-    name: "The GOAT",
-    address: "15 E. Figueroa St.",
-    protein: ["eggs", "bacon"],
-    cheese: ["goat cheese"],
-    veg: ["arugula"],
-    sauce: ["bourbon bacon jam"],
-    bread: ["buttermilk biscuit"],
-    dietary: [],
-    meat: true,
+    restaurant: "Hook & Press", name: "The GOAT", address: "15 E. Figueroa St.",
+    protein: ["eggs", "bacon"], cheese: ["goat cheese"], veg: ["arugula"], sauce: ["bourbon bacon jam"], bread: ["buttermilk biscuit"], dietary: [], meat: true,
     notes: "Tue–Sun 8am–4pm · Mon closed",
+    anchor: "#hook", image: IMG + "HookandPress-1-by-Elaine-Sanders.jpg",
   },
   {
-    restaurant: "I.V. Deli Mart",
-    name: "Turkey Presto Avocado Sandwich",
-    address: "6553 Pardall Rd., Isla Vista",
-    protein: ["turkey"],
-    cheese: [],
-    veg: ["avocado", "lettuce", "tomato", "onion"],
-    sauce: ["mayo", "pesto"],
-    bread: ["French roll"],
-    dietary: [],
-    meat: true,
+    restaurant: "I.V. Deli Mart", name: "Turkey Presto Avocado Sandwich", address: "6553 Pardall Rd., Isla Vista",
+    protein: ["turkey"], cheese: [], veg: ["avocado", "lettuce", "tomato", "onion"], sauce: ["mayo", "pesto"], bread: ["French roll"], dietary: [], meat: true,
     notes: "Sun–Thu 8am–1am · Fri–Sat 8am–3am",
+    anchor: "#deli", image: IMG + "IV-Deli-Turkey-Pesto-by-Haley-Snyder.jpg",
   },
   {
-    restaurant: "I.V. Deli Mart",
-    name: "Vegan Prime California Turkey Club",
-    address: "6553 Pardall Rd., Isla Vista",
-    protein: ["vegan turkey", "vegan bacon"],
-    cheese: [],
-    veg: ["avocado", "tomato", "cucumber", "bell peppers", "onion", "lettuce", "pepperoncini"],
-    sauce: ["veganaise", "mustard"],
-    bread: ["roll"],
-    dietary: ["vegan", "gluten-free option"],
-    meat: false,
+    restaurant: "I.V. Deli Mart", name: "Vegan Prime California Turkey Club", address: "6553 Pardall Rd., Isla Vista",
+    protein: ["vegan turkey", "vegan bacon"], cheese: [], veg: ["avocado", "tomato", "cucumber", "bell peppers", "onion", "lettuce", "pepperoncini"], sauce: ["veganaise", "mustard"], bread: ["roll"], dietary: ["vegan", "gluten-free option"], meat: false,
     notes: "Sun–Thu 8am–1am · Fri–Sat 8am–3am",
+    anchor: "#deli", image: IMG + "IV-Deli-Turkey-Pesto-by-Haley-Snyder.jpg",
   },
   {
-    restaurant: "J's Hot Chicken",
-    name: "Mac Crack Sandwich",
-    address: "199 S. Turnpike Rd., Ste. 104",
-    protein: ["fried chicken"],
-    cheese: [],
-    veg: [],
-    sauce: ["mac 'n' cheese", "Thousand Island"],
-    bread: ["brioche"],
-    dietary: [],
-    meat: true,
+    restaurant: "J's Hot Chicken", name: "Mac Crack Sandwich", address: "199 S. Turnpike Rd., Ste. 104",
+    protein: ["fried chicken"], cheese: [], veg: [], sauce: ["mac 'n' cheese", "Thousand Island"], bread: ["brioche"], dietary: [], meat: true,
     notes: "Mon–Thu 11am–9pm · Fri 11am–10pm · Sat–Sun 12–10pm",
+    anchor: "#js", image: IMG + "Js-McCrack-2-by-Terry-Ortega-1-rotated.jpeg",
   },
   {
-    restaurant: "Jonesy's Fried Chicken",
-    name: "JFC Original",
-    address: "282 Orange Ave., Goleta",
-    protein: ["fried chicken"],
-    cheese: [],
-    veg: ["iceberg lettuce", "pickles"],
-    sauce: ["JFC sauce"],
-    bread: ["French roll"],
-    dietary: [],
-    meat: true,
+    restaurant: "Jonesy's Fried Chicken", name: "JFC Original", address: "282 Orange Ave., Goleta",
+    protein: ["fried chicken"], cheese: [], veg: ["iceberg lettuce", "pickles"], sauce: ["JFC sauce"], bread: ["French roll"], dietary: [], meat: true,
     notes: "Wed–Fri 11:30am–6pm · Sat 11:30am–7pm · Sun 11:30am–6pm · Mon–Tue closed",
+    anchor: "#jonesy", image: IMG + "Jonesys-JFC-by-Silas-Fallstich.jpg",
   },
   {
-    restaurant: "Lighthouse Coffee",
-    name: "Breakfast Sandwich",
-    address: "Multiple locations",
-    protein: ["eggs", "bacon"],
-    cheese: ["cheddar"],
-    veg: ["avocado", "tomato"],
-    sauce: ["mayo"],
-    bread: ["English muffin"],
-    dietary: [],
-    meat: true,
+    restaurant: "Lighthouse Coffee", name: "Breakfast Sandwich", address: "Multiple locations",
+    protein: ["eggs", "bacon"], cheese: ["cheddar"], veg: ["avocado", "tomato"], sauce: ["mayo"], bread: ["English muffin"], dietary: [], meat: true,
     notes: "Daily 6am–4pm (Cliff Dr & Chapala) · Haley St 7am–3pm · Calle Real 6am–4pm",
+    anchor: "#lighthouse", image: IMG + "Lighthouse-by-Nick.jpeg",
   },
   {
-    restaurant: "Mesa Burger",
-    name: "Honey Spicy BBQ Crispy Sandwich",
-    address: "315 Meigs Rd.",
-    protein: ["fried chicken"],
-    cheese: ["blue cheese"],
-    veg: ["lettuce", "pickles"],
-    sauce: ["spicy honey-garlic BBQ sauce", "mustard aioli"],
-    bread: ["brioche"],
-    dietary: ["vegan option"],
-    meat: true,
+    restaurant: "Mesa Burger", name: "Honey Spicy BBQ Crispy Sandwich", address: "315 Meigs Rd.",
+    protein: ["fried chicken"], cheese: ["blue cheese"], veg: ["lettuce", "pickles"], sauce: ["spicy honey-garlic BBQ sauce", "mustard aioli"], bread: ["brioche"], dietary: ["vegan option"], meat: true,
     notes: "Sun–Thu 11am–8:30pm · Fri–Sat 11am–9pm",
+    anchor: "#mesa", image: IMG + "Mesa-Burger-5-by-Tiana-Molony-rotated.jpg",
   },
   {
-    restaurant: "Mission City Sandwich Shop",
-    name: "My Name Is Jeff",
-    address: "1826 Cliff Dr., Ste. A",
-    protein: ["roasted chicken", "bacon"],
-    cheese: ["pepper Jack"],
-    veg: ["avocado", "iceberg lettuce", "cilantro", "street-corn relish"],
-    sauce: ["Duke's mayo", "guajillo chipotle broth"],
-    bread: ["Dutch Crunch roll"],
-    dietary: [],
-    meat: true,
+    restaurant: "Mission City Sandwich Shop", name: "My Name Is Jeff", address: "1826 Cliff Dr., Ste. A",
+    protein: ["roasted chicken", "bacon"], cheese: ["pepper Jack"], veg: ["avocado", "iceberg lettuce", "cilantro", "street-corn relish"], sauce: ["Duke's mayo", "guajillo chipotle broth"], bread: ["Dutch Crunch roll"], dietary: [], meat: true,
     notes: "Tue–Sun 11am–4pm · Mon closed",
+    anchor: "#mission", image: IMG + "Mission-City-Whispers-by-Rebecca-Horrigan-1-rotated.jpeg",
   },
   {
-    restaurant: "Mission City Sandwich Shop",
-    name: "The Other Whispers",
-    address: "1826 Cliff Dr., Ste. A",
-    protein: ["turkey", "salami"],
-    cheese: ["parmesan"],
-    veg: ["red onion", "romaine", "pepper muffuletta"],
-    sauce: ["peppercorn dressing", "pesto"],
-    bread: ["Dutch Crunch roll"],
-    dietary: [],
-    meat: true,
+    restaurant: "Mission City Sandwich Shop", name: "The Other Whispers", address: "1826 Cliff Dr., Ste. A",
+    protein: ["turkey", "salami"], cheese: ["parmesan"], veg: ["red onion", "romaine", "pepper muffuletta"], sauce: ["peppercorn dressing", "pesto"], bread: ["Dutch Crunch roll"], dietary: [], meat: true,
     notes: "Tue–Sun 11am–4pm · Mon closed",
+    anchor: "#mission", image: IMG + "Mission-City-Whispers-by-Rebecca-Horrigan-1-rotated.jpeg",
   },
   {
-    restaurant: "Natural Café",
-    name: "Portobello Sandwich",
-    address: "361 Hitchcock Wy. / 6990 Marketplace Dr., Goleta",
-    protein: ["portobello mushroom"],
-    cheese: ["Jack"],
-    veg: ["grilled onions", "tomato", "sprouts"],
-    sauce: ["pesto", "garlic mayo"],
-    bread: ["nine-grain"],
-    dietary: ["vegetarian"],
-    meat: false,
+    restaurant: "Natural Café", name: "Portobello Sandwich", address: "361 Hitchcock Wy. / 6990 Marketplace Dr., Goleta",
+    protein: ["portobello mushroom"], cheese: ["Jack"], veg: ["grilled onions", "tomato", "sprouts"], sauce: ["pesto", "garlic mayo"], bread: ["nine-grain"], dietary: ["vegetarian"], meat: false,
     notes: "Daily 11am–9pm",
+    anchor: "#natural", image: IMG + "Natural-Cafe-by-Tyler-Hayden.jpg",
   },
   {
-    restaurant: "Noe's Café S.B.",
-    name: "Tuna Melt",
-    address: "129 E. Anapamu St.",
-    protein: ["tuna"],
-    cheese: ["Jack"],
-    veg: [],
-    sauce: [],
-    bread: ["sourdough"],
-    dietary: [],
-    meat: true,
-    notes: "Mon–Sat 7am–8pm, Sun 7am–2:30pm",
+    restaurant: "Noe's Café S.B.", name: "Tuna Melt", address: "129 E. Anapamu St.",
+    protein: ["tuna"], cheese: ["Jack"], veg: [], sauce: [], bread: ["sourdough"], dietary: [], meat: true,
+    notes: "Mon–Sat 7am–8pm · Sun 7am–2:30pm",
+    anchor: "#noe", image: IMG + "Noes-Tuna-by-Matt-Kettmann-1.jpg",
   },
   {
-    restaurant: "Noe's Café S.B.",
-    name: "Chicken Pesto",
-    address: "129 E. Anapamu St.",
-    protein: ["chicken"],
-    cheese: ["Jack"],
-    veg: ["arugula", "onion"],
-    sauce: ["pesto"],
-    bread: ["ciabatta"],
-    dietary: [],
-    meat: true,
-    notes: "Mon–Sat 7am–8pm, Sun 7am–2:30pm",
+    restaurant: "Noe's Café S.B.", name: "Chicken Pesto", address: "129 E. Anapamu St.",
+    protein: ["chicken"], cheese: ["Jack"], veg: ["arugula", "onion"], sauce: ["pesto"], bread: ["ciabatta"], dietary: [], meat: true,
+    notes: "Mon–Sat 7am–8pm · Sun 7am–2:30pm",
+    anchor: "#noe", image: IMG + "Noes-Chicken-2-by-Matt-Kettmann-1.jpeg",
   },
   {
-    restaurant: "Noe's Café S.B.",
-    name: "Chicken BLT",
-    address: "129 E. Anapamu St.",
-    protein: ["chicken", "bacon"],
-    cheese: ["cheddar"],
-    veg: ["lettuce", "tomato"],
-    sauce: ["chipotle aioli"],
-    bread: ["ciabatta"],
-    dietary: [],
-    meat: true,
-    notes: "Mon–Sat 7am–8pm, Sun 7am–2:30pm",
+    restaurant: "Noe's Café S.B.", name: "Chicken BLT", address: "129 E. Anapamu St.",
+    protein: ["chicken", "bacon"], cheese: ["cheddar"], veg: ["lettuce", "tomato"], sauce: ["chipotle aioli"], bread: ["ciabatta"], dietary: [], meat: true,
+    notes: "Mon–Sat 7am–8pm · Sun 7am–2:30pm",
+    anchor: "#noe", image: IMG + "Noes-Chicken-2-by-Matt-Kettmann-1.jpeg",
   },
   {
-    restaurant: "Noe's Café S.B.",
-    name: "Tri-Tip",
-    address: "129 E. Anapamu St.",
-    protein: ["tri-tip beef"],
-    cheese: ["Jack"],
-    veg: ["grilled onions", "green chiles", "lettuce"],
-    sauce: [],
-    bread: ["French roll"],
-    dietary: [],
-    meat: true,
-    notes: "Mon–Sat 7am–8pm, Sun 7am–2:30pm",
+    restaurant: "Noe's Café S.B.", name: "Tri-Tip", address: "129 E. Anapamu St.",
+    protein: ["tri-tip beef"], cheese: ["Jack"], veg: ["grilled onions", "green chiles", "lettuce"], sauce: [], bread: ["French roll"], dietary: [], meat: true,
+    notes: "Mon–Sat 7am–8pm · Sun 7am–2:30pm",
+    anchor: "#noe", image: IMG + "Noes-Tri-Tip-2-by-Matt-Kettmann.jpeg",
   },
   {
-    restaurant: "Noe's Café S.B.",
-    name: "Veggie",
-    address: "129 E. Anapamu St.",
-    protein: [],
-    cheese: ["Jack"],
-    veg: ["zucchini", "bell pepper", "grilled onions", "avocado"],
-    sauce: ["pesto"],
-    bread: ["sourdough"],
-    dietary: ["vegetarian"],
-    meat: false,
-    notes: "Mon–Sat 7am–8pm, Sun 7am–2:30pm",
+    restaurant: "Noe's Café S.B.", name: "Veggie", address: "129 E. Anapamu St.",
+    protein: [], cheese: ["Jack"], veg: ["zucchini", "bell pepper", "grilled onions", "avocado"], sauce: ["pesto"], bread: ["sourdough"], dietary: ["vegetarian"], meat: false,
+    notes: "Mon–Sat 7am–8pm · Sun 7am–2:30pm",
+    anchor: "#noe", image: IMG + "Noes-Chicken-2-by-Matt-Kettmann-1.jpeg",
   },
   {
-    restaurant: "Norton's Pastrami & Deli",
-    name: "The Best Hot Ham & Swiss",
-    address: "18 W. Figueroa St.",
-    protein: ["ham"],
-    cheese: ["Swiss"],
-    veg: ["tomatoes", "coleslaw"],
-    sauce: ["chipotle mayo"],
-    bread: ["roll"],
-    dietary: [],
-    meat: true,
-    notes: "Mon–Sat 10am–4pm, Sun closed",
+    restaurant: "Norton's Pastrami & Deli", name: "The Best Hot Ham & Swiss", address: "18 W. Figueroa St.",
+    protein: ["ham"], cheese: ["Swiss"], veg: ["tomatoes", "coleslaw"], sauce: ["chipotle mayo"], bread: ["roll"], dietary: [], meat: true,
+    notes: "Mon–Sat 10am–4pm · Sun closed · Not available on Grubhub",
+    anchor: "#norton", image: IMG + "Nortons-2-by-Courtesy-1.jpg",
   },
   {
-    restaurant: "Panino",
-    name: "#10 Roasted Chicken with Sun-Dried Tomatoes",
-    address: "Multiple SB-area locations",
-    protein: ["roasted chicken"],
-    cheese: ["provolone"],
-    veg: ["sun-dried tomatoes", "basil", "red onion", "greens"],
-    sauce: ["honey mustard", "mayo"],
-    bread: ["sourdough / focaccia / baguette / multi-grain"],
-    dietary: [],
-    meat: true,
-    notes: "Mon–Sat 10:30am–4pm, Sun 11am–3pm",
+    restaurant: "Panino", name: "#10 Roasted Chicken with Sun-Dried Tomatoes", address: "Multiple SB-area locations",
+    protein: ["roasted chicken"], cheese: ["provolone"], veg: ["sun-dried tomatoes", "basil", "red onion", "greens"], sauce: ["honey mustard", "mayo"], bread: ["sourdough / focaccia / baguette / multi-grain"], dietary: [], meat: true,
+    notes: "Mon–Sat 10:30am–4pm · Sun 11am–3pm",
+    anchor: "#panino", image: IMG + "Panino-by-Rebecca-Horrigan-rotated.jpeg",
   },
   {
-    restaurant: "Panino",
-    name: "#22 Panino Caprese",
-    address: "Multiple SB-area locations",
-    protein: [],
-    cheese: ["fresh mozzarella"],
-    veg: ["tomatoes", "basil", "greens"],
-    sauce: ["balsamic vinegar", "olive oil"],
-    bread: ["sourdough / focaccia / baguette"],
-    dietary: ["vegetarian"],
-    meat: false,
-    notes: "Mon–Sat 10:30am–4pm, Sun 11am–3pm",
+    restaurant: "Panino", name: "#22 Panino Caprese", address: "Multiple SB-area locations",
+    protein: [], cheese: ["fresh mozzarella"], veg: ["tomatoes", "basil", "greens"], sauce: ["balsamic vinegar", "olive oil"], bread: ["sourdough / focaccia / baguette"], dietary: ["vegetarian"], meat: false,
+    notes: "Mon–Sat 10:30am–4pm · Sun 11am–3pm",
+    anchor: "#panino", image: IMG + "Panino-by-Rebecca-Horrigan-rotated.jpeg",
   },
   {
-    restaurant: "The Patio Café",
-    name: "Chicken Wrapped Nugget",
-    address: "3007 De la Vina St.",
-    protein: ["chicken nuggets"],
-    cheese: [],
-    veg: ["guacamole", "grilled onions", "lettuce", "tomato"],
-    sauce: ["sriracha"],
-    bread: ["flour tortilla"],
-    dietary: [],
-    meat: true,
-    notes: "Daily 7am–2pm",
+    restaurant: "The Patio Café", name: "Chicken Wrapped Nugget", address: "3007 De la Vina St.",
+    protein: ["chicken nuggets"], cheese: [], veg: ["guacamole", "grilled onions", "lettuce", "tomato"], sauce: ["sriracha"], bread: ["flour tortilla"], dietary: [], meat: true,
+    notes: "Dine-in only · Daily 7am–2pm",
+    anchor: "#patio", image: IMG + "The-Patio-Cafe-Chicken-Wrapped-Nugget-by-Josef-Woodard-1-rotated.jpg",
   },
   {
-    restaurant: "The Patio Café",
-    name: "The Torta",
-    address: "3007 De la Vina St.",
-    protein: ["Louisiana sausage"],
-    cheese: ["queso fresco"],
-    veg: ["pico de gallo"],
-    sauce: ["sour cream"],
-    bread: ["torta roll"],
-    dietary: [],
-    meat: true,
-    notes: "Daily 7am–2pm",
+    restaurant: "The Patio Café", name: "The Torta", address: "3007 De la Vina St.",
+    protein: ["Louisiana sausage"], cheese: ["queso fresco"], veg: ["pico de gallo"], sauce: ["sour cream"], bread: ["torta roll"], dietary: [], meat: true,
+    notes: "Dine-in only · Daily 7am–2pm",
+    anchor: "#patio", image: IMG + "The-Patio-Cafe-Torta-by-Josef-Woodard-rotated.jpg",
   },
   {
-    restaurant: "Poké House",
-    name: "Spicy Salmon Sammich",
-    address: "811 State St., Ste. D",
-    protein: ["salmon"],
-    cheese: [],
-    veg: ["mixed greens", "cucumber", "grape tomatoes"],
-    sauce: ["spicy miso", "sriracha aioli"],
-    bread: ["sushi rice", "nori"],
-    dietary: [],
-    meat: true,
+    restaurant: "Poké House", name: "Spicy Salmon Sammich", address: "811 State St., Ste. D",
+    protein: ["salmon"], cheese: [], veg: ["mixed greens", "cucumber", "grape tomatoes"], sauce: ["spicy miso", "sriracha aioli"], bread: ["sushi rice", "nori"], dietary: [], meat: true,
     notes: "Daily 11am–9pm",
+    anchor: "#poke", image: IMG + "Poke-House-Spicy-Sammich-by-Ryan-Mai-1.jpg",
   },
   {
-    restaurant: "'Que by Whiskey 'N Rye",
-    name: "Carolina Pulled Pork Sando",
-    address: "38 W. Victoria St., #108",
-    protein: ["pulled pork"],
-    cheese: [],
-    veg: ["coleslaw", "pickled red onions"],
-    sauce: ["Carolina mustard sauce"],
-    bread: ["potato bun"],
-    dietary: [],
-    meat: true,
-    notes: "Daily 11:30am–8:30pm",
+    restaurant: "'Que by Whiskey 'N Rye", name: "Carolina Pulled Pork Sando", address: "38 W. Victoria St., #108",
+    protein: ["pulled pork"], cheese: [], veg: ["coleslaw", "pickled red onions"], sauce: ["Carolina mustard sauce"], bread: ["potato bun"], dietary: [], meat: true,
+    notes: "Daily 11:30am–8:30pm · Dine-in or on-site order only",
+    anchor: "#whiskey", image: IMG + "Que-by-Meghan-Clark-Tiernan-1.jpeg",
   },
   {
-    restaurant: "Rinkside Café",
-    name: "Firecracker Bánh Mì",
-    address: "6985 Santa Felicia Dr., Goleta",
-    protein: ["chicken", "tofu"],
-    cheese: [],
-    veg: ["cucumber", "jalapeño", "scallions", "cilantro", "basil", "mint", "daikon", "carrots"],
-    sauce: ["hot honey", "sriracha mayo"],
-    bread: ["baguette"],
-    dietary: ["vegan option"],
-    meat: true,
-    notes: "Mon–Wed 11:30am–11pm, Thu–Fri 11:30am–12am, Sat–Sun 8am–11pm",
+    restaurant: "Rinkside Café", name: "Firecracker Bánh Mì", address: "6985 Santa Felicia Dr., Goleta",
+    protein: ["chicken", "tofu"], cheese: [], veg: ["cucumber", "jalapeño", "scallions", "cilantro", "basil", "mint", "daikon", "carrots"], sauce: ["hot honey", "sriracha mayo"], bread: ["baguette"], dietary: ["vegan option"], meat: true,
+    notes: "Mon–Wed 11:30am–11pm · Thu–Fri 11:30am–12am · Sat–Sun 8am–11pm",
+    anchor: "#rinkside", image: IMG + "Rinkside-4-by-Erin-Lynch.jpg",
   },
   {
-    restaurant: "S.B. Fish Market",
-    name: "Tuna Salad Sandwich",
-    address: "7127 Hollister Ave., Ste. 18, Goleta",
-    protein: ["tuna"],
-    cheese: [],
-    veg: ["jalapeño", "green onion", "Castelvetrano olives", "butter lettuce", "tomatoes", "pickles"],
-    sauce: ["mayo", "Dijon aioli"],
-    bread: ["sourdough"],
-    dietary: [],
-    meat: true,
+    restaurant: "S.B. Fish Market", name: "Tuna Salad Sandwich", address: "7127 Hollister Ave., Ste. 18, Goleta",
+    protein: ["tuna"], cheese: [], veg: ["jalapeño", "green onion", "Castelvetrano olives", "butter lettuce", "tomatoes", "pickles"], sauce: ["mayo", "Dijon aioli"], bread: ["sourdough"], dietary: [], meat: true,
     notes: "Daily 10am–8pm",
+    anchor: "#fish", image: IMG + "SB-Fish-Market-by-Meghan-Clark-Tiernan-1.jpeg",
   },
   {
-    restaurant: "S.B. Pizza House",
-    name: "The Rincon (Meatball Panuozzo)",
-    address: "515 State St.",
-    protein: ["beef meatballs"],
-    cheese: ["mozzarella"],
-    veg: ["basil"],
-    sauce: ["marinara"],
-    bread: ["pizza dough"],
-    dietary: [],
-    meat: true,
-    notes: "11:30am–3pm while bread lasts",
+    restaurant: "S.B. Pizza House", name: "The Rincon (Meatball Panuozzo)", address: "515 State St.",
+    protein: ["beef meatballs"], cheese: ["mozzarella"], veg: ["basil"], sauce: ["marinara"], bread: ["pizza dough"], dietary: [], meat: true,
+    notes: "Mon 12–8pm · Tue–Thu & Sun 12–9pm · Fri–Sat 12pm–1:30am · 11:30am–3pm while bread lasts",
+    anchor: "#pizza", image: IMG + "SB-Pizza-House-2-by-Matt-Kettmann-1.jpeg",
   },
   {
-    restaurant: "S.B. Pizza House",
-    name: "The Shoreline",
-    address: "515 State St.",
-    protein: ["chicken"],
-    cheese: ["mozzarella"],
-    veg: ["romaine"],
-    sauce: ["Caesar dressing"],
-    bread: ["focaccia"],
-    dietary: [],
-    meat: true,
-    notes: "Mon 12–8pm, Tue–Thu & Sun 12–9pm, Fri–Sat 12pm–1:30am",
+    restaurant: "S.B. Pizza House", name: "The Shoreline", address: "515 State St.",
+    protein: ["chicken"], cheese: ["mozzarella"], veg: ["romaine"], sauce: ["Caesar dressing"], bread: ["focaccia"], dietary: [], meat: true,
+    notes: "Mon 12–8pm · Tue–Thu & Sun 12–9pm · Fri–Sat 12pm–1:30am · 11:30am–3pm while bread lasts",
+    anchor: "#pizza", image: IMG + "SB-Pizza-House-2-by-Matt-Kettmann-1.jpeg",
   },
   {
-    restaurant: "S.B. Pizza House",
-    name: "The Butterfly (Veggie)",
-    address: "515 State St.",
-    protein: [],
-    cheese: ["mozzarella"],
-    veg: ["eggplant", "roasted red pepper", "zucchini", "yellow squash", "mixed greens"],
-    sauce: ["balsamic"],
-    bread: ["focaccia"],
-    dietary: ["vegetarian"],
-    meat: false,
-    notes: "Mon 12–8pm, Tue–Thu & Sun 12–9pm, Fri–Sat 12pm–1:30am",
+    restaurant: "S.B. Pizza House", name: "The Butterfly (Veggie)", address: "515 State St.",
+    protein: [], cheese: ["mozzarella"], veg: ["eggplant", "roasted red pepper", "zucchini", "yellow squash", "mixed greens"], sauce: ["balsamic"], bread: ["focaccia"], dietary: ["vegetarian"], meat: false,
+    notes: "Mon 12–8pm · Tue–Thu & Sun 12–9pm · Fri–Sat 12pm–1:30am · 11:30am–3pm while bread lasts",
+    anchor: "#pizza", image: IMG + "SB-Pizza-House-2-by-Matt-Kettmann-1.jpeg",
   },
   {
-    restaurant: "S.B. Pizza House",
-    name: "The Refugio",
-    address: "515 State St.",
-    protein: ["salami", "capicola"],
-    cheese: ["provolone"],
-    veg: ["lettuce", "tomato"],
-    sauce: ["pesto", "Italian dressing"],
-    bread: ["focaccia"],
-    dietary: [],
-    meat: true,
-    notes: "Mon 12–8pm, Tue–Thu & Sun 12–9pm, Fri–Sat 12pm–1:30am",
+    restaurant: "S.B. Pizza House", name: "The Refugio", address: "515 State St.",
+    protein: ["salami", "capicola"], cheese: ["provolone"], veg: ["lettuce", "tomato"], sauce: ["pesto", "Italian dressing"], bread: ["focaccia"], dietary: [], meat: true,
+    notes: "Mon 12–8pm · Tue–Thu & Sun 12–9pm · Fri–Sat 12pm–1:30am · 11:30am–3pm while bread lasts",
+    anchor: "#pizza", image: IMG + "SB-Pizza-House-2-by-Matt-Kettmann-1.jpeg",
   },
   {
-    restaurant: "Shalhoob's",
-    name: "Fried Chicken Sandwich",
-    address: "220 Gray Ave. / 5112 Hollister Ave., Goleta",
-    protein: ["fried chicken"],
-    cheese: [],
-    veg: ["coleslaw", "pickles", "jalapeños"],
-    sauce: ["hot honey"],
-    bread: ["brioche"],
-    dietary: [],
-    meat: true,
-    notes: "Mon–Thu 11am–8pm, Fri–Sat 11am–9pm, Sun 11am–7:30pm",
+    restaurant: "Shalhoob's", name: "Fried Chicken Sandwich", address: "220 Gray Ave. / 5112 Hollister Ave., Goleta",
+    protein: ["fried chicken"], cheese: [], veg: ["coleslaw", "pickles", "jalapeños"], sauce: ["hot honey"], bread: ["brioche"], dietary: [], meat: true,
+    notes: "Mon–Thu 11am–8pm · Fri–Sat 11am–9pm · Sun 11am–7:30pm",
+    anchor: "#shalhoob", image: IMG + "Shalhoob-by-Ryan-Cruz-1-rotated.jpg",
   },
   {
-    restaurant: "South Coast Deli",
-    name: "The Summer Abroad",
-    address: "Multiple locations",
-    protein: ["roasted pork"],
-    cheese: ["Pecorino"],
-    veg: ["artichoke", "roasted peppers", "onions", "kale"],
-    sauce: ["roasted-garlic crema", "mayo"],
-    bread: ["roll"],
-    dietary: [],
-    meat: true,
-    notes: "Mon–Fri 9am–4pm, Sat 11am–4pm, Sun closed",
+    restaurant: "South Coast Deli", name: "The Summer Abroad", address: "Multiple locations",
+    protein: ["roasted pork"], cheese: ["Pecorino"], veg: ["artichoke", "roasted peppers", "onions", "kale"], sauce: ["roasted-garlic crema", "mayo"], bread: ["roll"], dietary: [], meat: true,
+    notes: "Mon–Fri 9am–4pm · Sat 11am–4pm · Sun closed · Must order in-store",
+    anchor: "#south", image: IMG + "South-Coast-7-by-Tiana-Molony-rotated.jpg",
   },
   {
-    restaurant: "Valentino's Take 'N Bake",
-    name: "The Tyler",
-    address: "4421 Hollister Ave.",
-    protein: ["chicken", "bacon"],
-    cheese: ["mozzarella", "parmesan"],
-    veg: ["jalapeños", "avocado", "lettuce"],
-    sauce: ["ranch dressing"],
-    bread: ["French roll"],
-    dietary: [],
-    meat: true,
-    notes: "Mon–Sat 11am–7pm, Sun closed",
+    restaurant: "Valentino's Take 'N Bake", name: "The Tyler", address: "4421 Hollister Ave.",
+    protein: ["chicken", "bacon"], cheese: ["mozzarella", "parmesan"], veg: ["jalapeños", "avocado", "lettuce"], sauce: ["ranch dressing"], bread: ["French roll"], dietary: [], meat: true,
+    notes: "Mon–Sat 11am–7pm · Sun closed",
+    anchor: "#valentino", image: IMG + "Valentinos-Tyler-by-Haley-Snyder-1.jpg",
   },
   {
-    restaurant: "Valentino's Take 'N Bake",
-    name: "Veggie Sub",
-    address: "4421 Hollister Ave.",
-    protein: [],
-    cheese: ["provolone", "mozzarella"],
-    veg: ["tomato", "onion", "pickle", "cucumber", "zucchini", "mushrooms", "black olives", "lettuce"],
-    sauce: ["mayo", "mustard", "Italian vinaigrette"],
-    bread: ["sub roll"],
-    dietary: ["vegetarian"],
-    meat: false,
-    notes: "Mon–Sat 11am–7pm, Sun closed",
+    restaurant: "Valentino's Take 'N Bake", name: "Veggie Sub", address: "4421 Hollister Ave.",
+    protein: [], cheese: ["provolone", "mozzarella"], veg: ["tomato", "onion", "pickle", "cucumber", "zucchini", "mushrooms", "black olives", "lettuce"], sauce: ["mayo", "mustard", "Italian vinaigrette"], bread: ["sub roll"], dietary: ["vegetarian"], meat: false,
+    notes: "Mon–Sat 11am–7pm · Sun closed",
+    anchor: "#valentino", image: IMG + "Valentinos-Veggie-by-Haley-Snyder.jpg",
   },
   {
-    restaurant: "Valentino's Take 'N Bake",
-    name: "Italian Sub",
-    address: "4421 Hollister Ave.",
-    protein: ["capicola", "cotto salami", "hard dry salami"],
-    cheese: ["provolone", "mozzarella"],
-    veg: ["tomatoes", "onions", "lettuce", "pepperoncinis"],
-    sauce: ["Italian dressing"],
-    bread: ["sub roll"],
-    dietary: [],
-    meat: true,
-    notes: "Mon–Sat 11am–7pm, Sun closed",
+    restaurant: "Valentino's Take 'N Bake", name: "Italian Sub", address: "4421 Hollister Ave.",
+    protein: ["capicola", "cotto salami", "hard dry salami"], cheese: ["provolone", "mozzarella"], veg: ["tomatoes", "onions", "lettuce", "pepperoncinis"], sauce: ["Italian dressing"], bread: ["sub roll"], dietary: [], meat: true,
+    notes: "Mon–Sat 11am–7pm · Sun closed",
+    anchor: "#valentino", image: IMG + "Valentinos-Italian-by-Haley-Snyder.jpg",
   },
   {
-    restaurant: "Validation Ale",
-    name: "Gochujang Fried Chicken",
-    address: "102 E. Yanonali St. / 2840 De la Vina St.",
-    protein: ["fried chicken"],
-    cheese: [],
-    veg: ["coleslaw", "pickles", "cilantro"],
-    sauce: ["gochujang"],
-    bread: ["brioche"],
-    dietary: [],
-    meat: true,
-    notes: "Mon–Wed 11:30am–8:30pm, Thu–Fri 11:30am–10pm, Sat 10am–10pm, Sun 10am–8:30pm",
+    restaurant: "Validation Ale", name: "Gochujang Fried Chicken", address: "102 E. Yanonali St. / 2840 De la Vina St.",
+    protein: ["fried chicken"], cheese: [], veg: ["coleslaw", "pickles", "cilantro"], sauce: ["gochujang"], bread: ["brioche"], dietary: [], meat: true,
+    notes: "Mon–Wed 11:30am–8:30pm · Thu–Fri 11:30am–10pm · Sat 10am–10pm · Sun 10am–8:30pm",
+    anchor: "#validation", image: IMG + "Validation-Ale-2-by-Christina-McDermott-2.jpeg",
   },
   {
-    restaurant: "Yellow Belly",
-    name: "Chipotle Chicken Tinga Sammie",
-    address: "2611 De la Vina St.",
-    protein: ["chicken tinga"],
-    cheese: ["cotija"],
-    veg: ["iceberg lettuce", "avocado", "pico de gallo"],
-    sauce: ["chipotle sauce"],
-    bread: ["brioche"],
-    dietary: [],
-    meat: true,
-    notes: "Mon–Thu 4–8:30pm, Fri 4–9pm, Sat 12–9pm, Sun closed",
+    restaurant: "Yellow Belly", name: "Chipotle Chicken Tinga Sammie", address: "2611 De la Vina St.",
+    protein: ["chicken tinga"], cheese: ["cotija"], veg: ["iceberg lettuce", "avocado", "pico de gallo"], sauce: ["chipotle sauce"], bread: ["brioche"], dietary: [], meat: true,
+    notes: "Dine-in only · Mon–Thu 4–8:30pm · Fri 4–9pm · Sat 12–9pm · Sun closed",
+    anchor: "#yellow", image: IMG + "Yellow-Belly-by-Jean-Yamamura.jpg",
   },
 ];
 
-// Sort sandwiches alphabetically by restaurant
 SANDWICHES.sort((a, b) => a.restaurant.localeCompare(b.restaurant));
 
-// ─── NEGATIVE DIETARY FILTERS ───────────────────────────────────────────────
-// These filter OUT sandwiches that contain something
 const NEGATIVE_FILTERS = [
-  { key: "no-protein",  label: "No protein",  test: s => s.protein.length === 0 },
-  { key: "no-meat",     label: "No meat",     test: s => !s.meat },
-  { key: "no-cheese",   label: "No cheese",   test: s => s.cheese.length === 0 },
-  { key: "no-dairy",    label: "No dairy",
+  { key: "no-protein", label: "No protein", test: s => s.protein.length === 0 },
+  { key: "no-meat",    label: "No meat",    test: s => !s.meat },
+  { key: "no-cheese",  label: "No cheese",  test: s => s.cheese.length === 0 },
+  { key: "no-dairy",   label: "No dairy",
     test: s => {
-      const dairyItems = ["cheese","cream","butter","milk","whipped","cheddar","swiss","jack","mozzarella","provolone","parmesan","goat","brie","cotija","queso","pecorino","ranch","aioli"];
-      const allText = [...s.cheese, ...s.sauce, ...s.protein].join(" ").toLowerCase();
-      return s.cheese.length === 0 && !dairyItems.some(d => allText.includes(d));
+      const d = ["cheese","cream","butter","milk","whipped","cheddar","swiss","jack","mozzarella","provolone","parmesan","goat","brie","cotija","queso","pecorino","ranch","aioli"];
+      const t = [...s.cheese,...s.sauce,...s.protein].join(" ").toLowerCase();
+      return s.cheese.length === 0 && !d.some(x => t.includes(x));
     }
   },
-  { key: "no-nuts",     label: "No nuts",
+  { key: "no-nuts", label: "No nuts",
     test: s => {
-      const nutItems = ["cashew","peanut","almond","walnut","pecan","pine nut","pistachio","hazelnut"];
-      const allText = [...s.protein, ...s.cheese, ...s.veg, ...s.sauce].join(" ").toLowerCase();
-      return !nutItems.some(n => allText.includes(n));
+      const n = ["cashew","peanut","almond","walnut","pecan","pine nut","pistachio","hazelnut"];
+      const t = [...s.protein,...s.cheese,...s.veg,...s.sauce].join(" ").toLowerCase();
+      return !n.some(x => t.includes(x));
     }
   },
   { key: "no-pork", label: "No pork",
     test: s => {
-      const porkItems = ["pork","ham","bacon","salami","mortadella","capicola","prosciutto","pancetta","sausage","pastrami","pulled pork"];
-      const allText = [...s.protein, ...s.sauce].join(" ").toLowerCase();
-      return !porkItems.some(p => allText.includes(p));
+      const p = ["pork","ham","bacon","salami","mortadella","capicola","prosciutto","pancetta","sausage","pastrami"];
+      const t = [...s.protein,...s.sauce].join(" ").toLowerCase();
+      return !p.some(x => t.includes(x));
     }
   },
   { key: "no-beef", label: "No beef",
     test: s => {
-      const beefItems = ["beef","tri-tip","meatball","pastrami","brisket","steak","burger"];
-      const allText = [...s.protein].join(" ").toLowerCase();
-      return !beefItems.some(b => allText.includes(b));
+      const b = ["beef","tri-tip","meatball","pastrami","brisket","steak","burger"];
+      return !b.some(x => s.protein.join(" ").toLowerCase().includes(x));
     }
   },
   { key: "no-chicken", label: "No chicken",
-    test: s => {
-      const allText = [...s.protein].join(" ").toLowerCase();
-      return !allText.includes("chicken");
-    }
+    test: s => !s.protein.join(" ").toLowerCase().includes("chicken")
   },
   { key: "no-poultry", label: "No poultry",
     test: s => {
-      const poultryItems = ["chicken", "turkey", "duck", "poultry"];
-      const allText = [...s.protein].join(" ").toLowerCase();
-      return !poultryItems.some(p => allText.includes(p));
+      const p = ["chicken","turkey","duck","poultry"];
+      return !p.some(x => s.protein.join(" ").toLowerCase().includes(x));
     }
   },
 ];
 
-// ─── STATE ──────────────────────────────────────────────────────────────────
-let selected = new Set();       // positive ingredient keys
-let negSelected = new Set();    // negative filter keys
+let selected = new Set();
+let negSelected = new Set();
 
-// ─── BUILD CHIP LISTS ───────────────────────────────────────────────────────
-const CATEGORIES = {
-  bread: new Set(),
-  cheese: new Set(),
-  protein: new Set(),
-  sauce: new Set(),
-  veg: new Set(),
-};
-
+const CATEGORIES = { bread: new Set(), cheese: new Set(), protein: new Set(), sauce: new Set(), veg: new Set() };
 SANDWICHES.forEach(s => {
   s.protein.forEach(i => CATEGORIES.protein.add(i));
   s.cheese.forEach(i => CATEGORIES.cheese.add(i));
@@ -1326,25 +566,16 @@ SANDWICHES.forEach(s => {
   s.sauce.forEach(i => CATEGORIES.sauce.add(i));
   s.bread.forEach(i => CATEGORIES.bread.add(i));
 });
-
-// Also collect dietary positive tags
 const dietaryPositive = new Set();
 SANDWICHES.forEach(s => s.dietary.forEach(i => dietaryPositive.add(i)));
 
 function buildChips() {
-  // Positive category chips
   Object.entries(CATEGORIES).forEach(([cat, items]) => {
     const el = document.getElementById(`cat-${cat}`);
-    [...items].sort().forEach(item => {
-      el.appendChild(makeChip(item, item.toLowerCase(), false));
-    });
+    [...items].sort().forEach(item => el.appendChild(makeChip(item, item.toLowerCase())));
   });
-
-  // Dietary: positive tags first, then negative filters
   const dietEl = document.getElementById('cat-dietary');
-  [...dietaryPositive].sort().forEach(item => {
-    dietEl.appendChild(makeChip(item, item.toLowerCase(), false));
-  });
+  [...dietaryPositive].sort().forEach(item => dietEl.appendChild(makeChip(item, item.toLowerCase())));
   NEGATIVE_FILTERS.forEach(f => {
     const chip = document.createElement('div');
     chip.className = 'chip dietary-negative';
@@ -1355,7 +586,7 @@ function buildChips() {
   });
 }
 
-function makeChip(label, key, isNeg) {
+function makeChip(label, key) {
   const chip = document.createElement('div');
   chip.className = 'chip';
   chip.dataset.ingredient = key;
@@ -1364,90 +595,56 @@ function makeChip(label, key, isNeg) {
   return chip;
 }
 
-// ─── TOGGLE LOGIC ───────────────────────────────────────────────────────────
 function toggleChip(chip, key) {
-  if (selected.has(key)) { selected.delete(key); chip.classList.remove('active'); }
-  else { selected.add(key); chip.classList.add('active'); }
-  updateResults();
-  updateSelectionBar();
-  updateMobileBadge();
+  selected.has(key) ? (selected.delete(key), chip.classList.remove('active')) : (selected.add(key), chip.classList.add('active'));
+  updateResults(); updateSelectionBar(); updateMobileBadge();
 }
-
 function toggleNeg(chip, key) {
-  if (negSelected.has(key)) { negSelected.delete(key); chip.classList.remove('active'); }
-  else { negSelected.add(key); chip.classList.add('active'); }
-  updateResults();
-  updateSelectionBar();
-  updateMobileBadge();
+  negSelected.has(key) ? (negSelected.delete(key), chip.classList.remove('active')) : (negSelected.add(key), chip.classList.add('active'));
+  updateResults(); updateSelectionBar(); updateMobileBadge();
 }
-
 function clearAll() {
-  selected.clear();
-  negSelected.clear();
+  selected.clear(); negSelected.clear();
   document.querySelectorAll('.chip.active').forEach(c => c.classList.remove('active'));
-  updateResults();
-  updateSelectionBar();
-  updateMobileBadge();
+  updateResults(); updateSelectionBar(); updateMobileBadge();
 }
 
-// ─── SEARCH BAR ─────────────────────────────────────────────────────────────
 function filterChips(query) {
   const q = query.trim().toLowerCase();
   document.getElementById('search-clear').classList.toggle('visible', query.length > 0);
   let anyVisible = false;
-
   document.querySelectorAll('.chip:not(.dietary-negative)').forEach(chip => {
-    const label = chip.textContent.trim().toLowerCase();
-    const match = !q || label.includes(q);
+    const match = !q || chip.textContent.trim().toLowerCase().includes(q);
     chip.classList.toggle('hidden-by-search', !match);
     if (match) anyVisible = true;
   });
-
-  // Negative dietary chips: always show (they don't have ingredients)
-  document.querySelectorAll('.chip.dietary-negative').forEach(chip => {
-    chip.classList.remove('hidden-by-search');
-    anyVisible = true;
-  });
-
-  // Hide empty category sections
+  document.querySelectorAll('.chip.dietary-negative').forEach(chip => { chip.classList.remove('hidden-by-search'); anyVisible = true; });
   ['bread','cheese','protein','sauce','veg'].forEach(cat => {
-    const section = document.getElementById(`cat-${cat}-section`);
-    const visible = [...section.querySelectorAll('.chip:not(.hidden-by-search)')].length > 0;
-    section.style.display = visible ? '' : 'none';
+    const sec = document.getElementById(`cat-${cat}-section`);
+    sec.style.display = [...sec.querySelectorAll('.chip:not(.hidden-by-search)')].length > 0 ? '' : 'none';
   });
-
-  document.getElementById('no-results-msg').style.display =
-    q && !anyVisible ? 'block' : 'none';
+  document.getElementById('no-results-msg').style.display = q && !anyVisible ? 'block' : 'none';
 }
-
 function clearSearch() {
-  const input = document.getElementById('ing-search');
-  input.value = '';
-  input.focus();
-  filterChips('');
+  const inp = document.getElementById('ing-search');
+  inp.value = ''; inp.focus(); filterChips('');
 }
 
-// ─── ACTIVE SELECTION BAR ───────────────────────────────────────────────────
 function updateSelectionBar() {
   const bar = document.getElementById('active-selections');
   bar.innerHTML = '';
-
   selected.forEach(key => {
     const chip = document.createElement('span');
     chip.className = 'sel-chip';
     chip.innerHTML = `${key} <span class="remove">✕</span>`;
     chip.addEventListener('click', () => {
       selected.delete(key);
-      // deactivate matching sidebar chip
-      const sideChip = document.querySelector(`.chip[data-ingredient="${CSS.escape(key)}"]`);
-      if (sideChip) sideChip.classList.remove('active');
-      updateResults();
-      updateSelectionBar();
-      updateMobileBadge();
+      const sc = document.querySelector(`.chip[data-ingredient="${CSS.escape(key)}"]`);
+      if (sc) sc.classList.remove('active');
+      updateResults(); updateSelectionBar(); updateMobileBadge();
     });
     bar.appendChild(chip);
   });
-
   negSelected.forEach(key => {
     const filter = NEGATIVE_FILTERS.find(f => f.key === key);
     if (!filter) return;
@@ -1456,141 +653,112 @@ function updateSelectionBar() {
     chip.innerHTML = `${filter.label} <span class="remove">✕</span>`;
     chip.addEventListener('click', () => {
       negSelected.delete(key);
-      const sideChip = document.querySelector(`.chip[data-negkey="${key}"]`);
-      if (sideChip) sideChip.classList.remove('active');
-      updateResults();
-      updateSelectionBar();
-      updateMobileBadge();
+      const sc = document.querySelector(`.chip[data-negkey="${key}"]`);
+      if (sc) sc.classList.remove('active');
+      updateResults(); updateSelectionBar(); updateMobileBadge();
     });
     bar.appendChild(chip);
   });
 }
 
-// ─── RESULTS LOGIC ──────────────────────────────────────────────────────────
 function getAllIngredients(s) {
-  return [...s.protein, ...s.cheese, ...s.veg, ...s.sauce, ...s.bread, ...s.dietary]
-    .map(i => i.toLowerCase());
+  return [...s.protein,...s.cheese,...s.veg,...s.sauce,...s.bread,...s.dietary].map(i => i.toLowerCase());
 }
-
 function sandwichPassesNegFilters(s) {
   for (const key of negSelected) {
-    const filter = NEGATIVE_FILTERS.find(f => f.key === key);
-    if (filter && !filter.test(s)) return false;
+    const f = NEGATIVE_FILTERS.find(f => f.key === key);
+    if (f && !f.test(s)) return false;
   }
   return true;
 }
 
 function updateResults() {
-  const cards = document.querySelectorAll('.card');
+  const wrappers = document.querySelectorAll('.card-link');
   const note = document.getElementById('match-note');
   let visible = 0;
   const hasAnyFilter = selected.size > 0 || negSelected.size > 0;
 
-  cards.forEach(card => {
+  wrappers.forEach(wrapper => {
+    const card = wrapper.querySelector('.card');
     const idx = parseInt(card.dataset.idx);
     const s = SANDWICHES[idx];
     const allIng = getAllIngredients(s);
 
-    // Apply negative filters first
-    if (!sandwichPassesNegFilters(s)) {
-      card.classList.add('hidden');
-      return;
-    }
+    if (!sandwichPassesNegFilters(s)) { wrapper.classList.add('hidden'); return; }
 
-    // No positive filters → show all that pass negative
     if (selected.size === 0) {
-      card.classList.remove('hidden');
+      wrapper.classList.remove('hidden');
       card.querySelector('.match-score').classList.remove('visible');
       card.querySelectorAll('.ing-tag').forEach(t => t.classList.remove('matched'));
-      visible++;
-      return;
+      visible++; return;
     }
 
-    // Positive filter matching
-    // Rule: a sandwich matches a selected term if ANY of its ingredient strings
-    // contain the selected term (ingredient.includes(sel)).
-    // This means selecting "chicken" matches "chicken tinga" and "fried chicken",
-    // but selecting "chicken tinga" does NOT match a sandwich that only has "chicken".
-    const matches = [...selected].filter(sel =>
-      allIng.some(ing => ing.includes(sel))
-    );
-
+    const matches = [...selected].filter(sel => allIng.some(ing => ing.includes(sel)));
     if (matches.length > 0) {
-      card.classList.remove('hidden');
+      wrapper.classList.remove('hidden');
       const scoreEl = card.querySelector('.match-score');
       scoreEl.textContent = `${matches.length}/${selected.size} match`;
       scoreEl.classList.add('visible');
       visible++;
       card.querySelectorAll('.ing-tag').forEach(tag => {
-        const tagText = tag.textContent.toLowerCase();
-        const isMatch = [...selected].some(sel => tagText.includes(sel));
-        tag.classList.toggle('matched', isMatch);
+        tag.classList.toggle('matched', [...selected].some(sel => tag.textContent.toLowerCase().includes(sel)));
       });
     } else {
-      card.classList.add('hidden');
+      wrapper.classList.add('hidden');
     }
   });
 
   document.getElementById('count').textContent = visible;
+  if (!hasAnyFilter) note.textContent = '';
+  else if (selected.size > 0 && negSelected.size > 0) note.textContent = `${selected.size} ingredient${selected.size>1?'s':''} + ${negSelected.size} restriction${negSelected.size>1?'s':''}`;
+  else if (selected.size > 0) note.textContent = `Showing sandwiches with any of your ${selected.size} selected ingredient${selected.size>1?'s':''}`;
+  else note.textContent = `Filtered by ${negSelected.size} restriction${negSelected.size>1?'s':''}`;
 
-  if (!hasAnyFilter) {
-    note.textContent = '';
-  } else if (selected.size > 0 && negSelected.size > 0) {
-    note.textContent = `${selected.size} ingredient${selected.size > 1 ? 's' : ''} + ${negSelected.size} restriction${negSelected.size > 1 ? 's' : ''}`;
-  } else if (selected.size > 0) {
-    note.textContent = `Showing sandwiches with any of your ${selected.size} selected ingredient${selected.size > 1 ? 's' : ''}`;
-  } else {
-    note.textContent = `Filtered by ${negSelected.size} restriction${negSelected.size > 1 ? 's' : ''}`;
-  }
-
-  // Re-sort visible cards by match score desc (only when positive filters active)
   if (selected.size > 0) {
     const container = document.getElementById('cards');
-    const visibleCards = [...container.querySelectorAll('.card:not(.hidden)')];
-    visibleCards.sort((a, b) => {
-      const aScore = parseInt(a.querySelector('.match-score').textContent) || 0;
-      const bScore = parseInt(b.querySelector('.match-score').textContent) || 0;
-      return bScore - aScore;
+    const visWrappers = [...container.querySelectorAll('.card-link:not(.hidden)')];
+    visWrappers.sort((a, b) => {
+      const as = parseInt(a.querySelector('.match-score').textContent) || 0;
+      const bs = parseInt(b.querySelector('.match-score').textContent) || 0;
+      return bs - as;
     });
-    visibleCards.forEach(c => container.appendChild(c));
+    visWrappers.forEach(w => container.appendChild(w));
   }
 }
 
-// ─── BUILD CARDS ────────────────────────────────────────────────────────────
 function buildCards() {
   const container = document.getElementById('cards');
   SANDWICHES.forEach((s, i) => {
-    const allIng = [...s.protein, ...s.cheese, ...s.veg, ...s.sauce, ...s.bread];
-    const card = document.createElement('div');
-    card.className = 'card';
-    card.dataset.idx = i;
-    card.innerHTML = `
-      <div class="match-score"></div>
-      <div class="card-restaurant">${s.restaurant}</div>
-      <div class="card-name">${s.name}</div>
-      <div class="card-ingredients">${allIng.map(ing =>
-        `<span class="ing-tag">${ing}</span>`
-      ).join('')}</div>
-      <div class="card-address">${s.address}</div>
-      ${s.notes ? `<div class="card-notes">${s.notes}</div>` : ''}
-    `;
-    container.appendChild(card);
+    const allIng = [...s.protein,...s.cheese,...s.veg,...s.sauce,...s.bread];
+    const wrapper = document.createElement('a');
+    wrapper.className = 'card-link';
+    wrapper.href = BASE + s.anchor;
+    wrapper.target = '_blank';
+    wrapper.rel = 'noopener';
+
+    wrapper.innerHTML = `
+      <div class="card" data-idx="${i}">
+        <div class="match-score"></div>
+        <img class="card-img" src="${s.image}" alt="${s.name}" loading="lazy">
+        <div class="card-body">
+          <div class="card-restaurant">${s.restaurant}</div>
+          <div class="card-name">${s.name}</div>
+          <div class="card-ingredients">${allIng.map(ing => `<span class="ing-tag">${ing}</span>`).join('')}</div>
+          <div class="card-address">${s.address}</div>
+          ${s.notes ? `<div class="card-notes">${s.notes}</div>` : ''}
+          <div class="read-more">Read full review →</div>
+        </div>
+      </div>`;
+    container.appendChild(wrapper);
   });
   document.getElementById('count').textContent = SANDWICHES.length;
 }
 
-// ─── COLLAPSIBLE CATEGORIES ─────────────────────────────────────────────────
-function toggleCat(sectionId) {
-  const section = document.getElementById(sectionId);
-  section.classList.toggle('collapsed');
-}
+function toggleCat(sectionId) { document.getElementById(sectionId).classList.toggle('collapsed'); }
 
-// ─── MOBILE SIDEBAR TOGGLE ──────────────────────────────────────────────────
 function toggleMobileSidebar() {
-  const sidebar = document.getElementById('sidebar');
-  const btn = document.getElementById('filter-toggle-btn');
-  sidebar.classList.toggle('mobile-open');
-  btn.classList.toggle('open');
+  document.getElementById('sidebar').classList.toggle('mobile-open');
+  document.getElementById('filter-toggle-btn').classList.toggle('open');
 }
 
 function updateMobileBadge() {
